@@ -15,6 +15,14 @@
 		D3322125200C583100193221 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322124200C583100193221 /* main.m */; };
 		D332212F200C583100193221 /* SDRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D332212E200C583100193221 /* SDRecordTests.m */; };
 		D332213A200C583100193221 /* SDRecordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322139200C583100193221 /* SDRecordUITests.m */; };
+		D332214A200C5B6200193221 /* SD_RecordHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322149200C5B6200193221 /* SD_RecordHelper.m */; };
+		D332214E200C5BBF00193221 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = D332214D200C5BBF00193221 /* Record.m */; };
+		D3322159200C91F300193221 /* AXCCRecordCellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3322156200C91F300193221 /* AXCCRecordCellCell.xib */; };
+		D332215A200C91F300193221 /* AXCCRecordCellCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322158200C91F300193221 /* AXCCRecordCellCell.m */; };
+		D3322162200C939300193221 /* AXCCRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322160200C939300193221 /* AXCCRecordVC.m */; };
+		D3322165200C955400193221 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322164200C955400193221 /* BaseViewController.m */; };
+		D3322168200C956400193221 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322167200C956400193221 /* Util.m */; };
+		D3322177200C9E1000193221 /* RecordDataAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3322176200C9E1000193221 /* RecordDataAccessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,21 @@
 		D3322135200C583100193221 /* SDRecordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDRecordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3322139200C583100193221 /* SDRecordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDRecordUITests.m; sourceTree = "<group>"; };
 		D332213B200C583100193221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3322148200C5B6200193221 /* SD_RecordHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SD_RecordHelper.h; sourceTree = "<group>"; };
+		D3322149200C5B6200193221 /* SD_RecordHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SD_RecordHelper.m; sourceTree = "<group>"; };
+		D332214C200C5BBF00193221 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		D332214D200C5BBF00193221 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
+		D3322156200C91F300193221 /* AXCCRecordCellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXCCRecordCellCell.xib; sourceTree = "<group>"; };
+		D3322157200C91F300193221 /* AXCCRecordCellCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCCRecordCellCell.h; sourceTree = "<group>"; };
+		D3322158200C91F300193221 /* AXCCRecordCellCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCCRecordCellCell.m; sourceTree = "<group>"; };
+		D3322160200C939300193221 /* AXCCRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCCRecordVC.m; sourceTree = "<group>"; };
+		D3322161200C939300193221 /* AXCCRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCCRecordVC.h; sourceTree = "<group>"; };
+		D3322163200C955400193221 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		D3322164200C955400193221 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D3322166200C956400193221 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		D3322167200C956400193221 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		D3322175200C9E1000193221 /* RecordDataAccessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDataAccessor.h; sourceTree = "<group>"; };
+		D3322176200C9E1000193221 /* RecordDataAccessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDataAccessor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +124,13 @@
 		D3322114200C583000193221 /* SDRecord */ = {
 			isa = PBXGroup;
 			children = (
+				D3322161200C939300193221 /* AXCCRecordVC.h */,
+				D3322160200C939300193221 /* AXCCRecordVC.m */,
+				D3322157200C91F300193221 /* AXCCRecordCellCell.h */,
+				D3322158200C91F300193221 /* AXCCRecordCellCell.m */,
+				D3322156200C91F300193221 /* AXCCRecordCellCell.xib */,
+				D332214B200C5BB900193221 /* Model */,
+				D3322147200C5B4100193221 /* SD_Recorder */,
 				D3322115200C583000193221 /* AppDelegate.h */,
 				D3322116200C583000193221 /* AppDelegate.m */,
 				D3322118200C583000193221 /* ViewController.h */,
@@ -110,6 +140,12 @@
 				D3322120200C583100193221 /* LaunchScreen.storyboard */,
 				D3322123200C583100193221 /* Info.plist */,
 				D3322124200C583100193221 /* main.m */,
+				D3322163200C955400193221 /* BaseViewController.h */,
+				D3322164200C955400193221 /* BaseViewController.m */,
+				D3322166200C956400193221 /* Util.h */,
+				D3322167200C956400193221 /* Util.m */,
+				D3322175200C9E1000193221 /* RecordDataAccessor.h */,
+				D3322176200C9E1000193221 /* RecordDataAccessor.m */,
 			);
 			path = SDRecord;
 			sourceTree = "<group>";
@@ -130,6 +166,24 @@
 				D332213B200C583100193221 /* Info.plist */,
 			);
 			path = SDRecordUITests;
+			sourceTree = "<group>";
+		};
+		D3322147200C5B4100193221 /* SD_Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				D3322148200C5B6200193221 /* SD_RecordHelper.h */,
+				D3322149200C5B6200193221 /* SD_RecordHelper.m */,
+			);
+			path = SD_Recorder;
+			sourceTree = "<group>";
+		};
+		D332214B200C5BB900193221 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D332214C200C5BBF00193221 /* Record.h */,
+				D332214D200C5BBF00193221 /* Record.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3322122200C583100193221 /* LaunchScreen.storyboard in Resources */,
+				D3322159200C91F300193221 /* AXCCRecordCellCell.xib in Resources */,
 				D332211F200C583100193221 /* Assets.xcassets in Resources */,
 				D332211D200C583000193221 /* Main.storyboard in Resources */,
 			);
@@ -265,9 +320,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D332214E200C5BBF00193221 /* Record.m in Sources */,
+				D3322177200C9E1000193221 /* RecordDataAccessor.m in Sources */,
+				D3322165200C955400193221 /* BaseViewController.m in Sources */,
+				D332215A200C91F300193221 /* AXCCRecordCellCell.m in Sources */,
 				D332211A200C583000193221 /* ViewController.m in Sources */,
+				D332214A200C5B6200193221 /* SD_RecordHelper.m in Sources */,
 				D3322125200C583100193221 /* main.m in Sources */,
 				D3322117200C583000193221 /* AppDelegate.m in Sources */,
+				D3322162200C939300193221 /* AXCCRecordVC.m in Sources */,
+				D3322168200C956400193221 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V75EHS3UK5;
 				INFOPLIST_FILE = SDRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = StephenD.SDRecord;
@@ -444,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V75EHS3UK5;
 				INFOPLIST_FILE = SDRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = StephenD.SDRecord;
