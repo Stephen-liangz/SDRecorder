@@ -1,0 +1,9 @@
+target 'SDRecord' do
+
+use_frameworks!
+
+#objective-c
+
+pod 'MagicalRecord'
+
+end

@@ -1,10 +1,11 @@
 //
 //  SD_RecordHelper.h
-//  CQJT
+//  SDRecord
 //
-//  Created by 钟亮 on 2017/12/22.
-//  Copyright © 2017年 YZH. All rights reserved.
+//  Created by Stephen on 2017/12/22.
+//  Copyright © 2017年 Stephen. All rights reserved.
 //
+
 
 #import <Foundation/Foundation.h>
 #import "Record.h"

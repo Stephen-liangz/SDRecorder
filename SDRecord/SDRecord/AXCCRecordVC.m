@@ -1,9 +1,9 @@
 //
 //  AXCCRecordVC.m
-//  CQJT
+//  SDRecord
 //
-//  Created by 钟亮 on 2017/12/22.
-//  Copyright © 2017年 YZH. All rights reserved.
+//  Created by Stephen on 2017/12/22.
+//  Copyright © 2017年 Stephen. All rights reserved.
 //
 
 #import "AXCCRecordVC.h"
@@ -57,7 +57,7 @@
         self.selectedRecordArray = [NSMutableArray array];
     }
     
-//    self.dataArray = [RecordDataAccessor getAllRecord];
+    self.dataArray = [NSMutableArray arrayWithArray:[[[RecordDataAccessor getRecord] reverseObjectEnumerator] allObjects]];
     
     [self.tableView reloadData];
 
@@ -93,7 +93,7 @@
     };
     
     recordHelper.SDRecordDoneBlock = ^{
-//        self.dataArray = [RecordDataAccessor getAllRecord];
+        self.dataArray = [[[RecordDataAccessor getRecord]reverseObjectEnumerator] allObjects];
         
         [self.tableView reloadData];
     };

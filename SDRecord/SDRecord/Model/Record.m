@@ -1,9 +1,9 @@
 //
 //  Record.m
-//  CQJT
+//  SDRecord
 //
-//  Created by Stephen on 2017/12/25.
-//  Copyright © 2017年 YZH. All rights reserved.
+//  Created by Stephen on 2017/12/22.
+//  Copyright © 2017年 Stephen. All rights reserved.
 //
 
 #import "Record.h"

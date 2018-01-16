@@ -1,9 +1,9 @@
 //
 //  SD_RecordHelper.m
-//  CQJT
+//  SDRecord
 //
-//  Created by 钟亮 on 2017/12/22.
-//  Copyright © 2017年 YZH. All rights reserved.
+//  Created by Stephen on 2017/12/22.
+//  Copyright © 2017年 Stephen. All rights reserved.
 //
 
 #import "SD_RecordHelper.h"
@@ -96,26 +96,22 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
     [self resumeClick];
 }
 
-//停止录音
+///停止录音
 - (void)finishRecord{
+    //设置当前录音状态
     _recordStatus = SD_RHDone;
     
+    [self stopClick];
+    
+    //初始化录音数据
     _recordTimeIndex = 0;
     [_timer invalidate];
     _timer = nil;
-    [self stopClick];
-
 }
 
 
-/**
- *  开始按钮点击
- */
+///开始按钮点击
 - (void)recordClick{
-    //    if (![self.audioRecorder isRecording]) {
-    //        [self.audioRecorder record];//首次使用应用时如果调用record方法会询问用户是否允许使用麦克风
-    //        [self configTimer];
-    //    }
     
     [self configAudioRecorder];
     [self.audioRecorder record];//首次使用应用时如果调用record方法会询问用户是否允许使用麦克风
