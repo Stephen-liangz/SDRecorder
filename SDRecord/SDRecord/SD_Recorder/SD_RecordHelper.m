@@ -123,7 +123,7 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
 ///暂停按钮点击
 - (void)pauseClick {
     if ([self.audioRecorder isRecording]) {
-        
+        self.recordStatus = SD_RHPause;
         [self.audioRecorder pause];
         [self.timer setFireDate:[NSDate distantFuture]];
         NSLog(@"录音 == 暂停");
@@ -198,6 +198,7 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
     }
     
     if (_recordTimeIndex < kRecordDuration) {
+        self.recordStatus = SD_RHRecording;
         _recordTimeIndex += 1;
     }else{
         [self stopClick];
@@ -280,24 +281,18 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
     _audioRecorder.delegate=self;
     _audioRecorder.meteringEnabled=YES;//如果要监控声波则必须设置为YES
     if (error) {
-        NSLog(@"创建录音机对象时发生错误，错误信息：%@",error.localizedDescription);
-        
+        NSLog(@"创建录音机对象时发生错误,错误信息：%@",error.localizedDescription);
     }
-    
     
 }
 
 #pragma mark - 录音机代理方法
 /**
- *  录音完成，录音完成后播放录音
- *
- *  @param recorder 录音机对象
- *  @param flag     是否成功
+ *  录音完成
  */
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag{
-    //    if (![self.audioPlayer isPlaying]) {
-    //        [self.audioPlayer play];
-    //    }
+
+    ///录音完成
     if (self.SDRecordDoneBlock) {
         self.SDRecordDoneBlock();
     }
@@ -313,7 +308,7 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
         _audioPlayer.numberOfLoops=0;
         [_audioPlayer prepareToPlay];
         if (error) {
-            NSLog(@"创建播放器过程中发生错误，错误信息：%@",error.localizedDescription);
+            NSLog(@"创建播放器过程中发生错误,错误信息：%@",error.localizedDescription);
             return nil;
         }
     }
@@ -329,14 +324,10 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
     self.audioPlayer.numberOfLoops=0;
     [self.audioPlayer prepareToPlay];
     if (error) {
-        NSLog(@"创建播放器过程中发生错误，错误信息：%@",error.localizedDescription);
+        NSLog(@"创建播放器过程中发生错误,错误信息：%@",error.localizedDescription);
     }
     [self.audioPlayer play];
 }
-
-
-
-
 
 
 @end

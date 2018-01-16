@@ -16,8 +16,10 @@
 
 @interface AXCCRecordVC ()<UITableViewDelegate, UITableViewDataSource>
 {
-    ///显示tape image index
+    ///显示tape image index   录音点显示
     NSInteger _tapeImgIndex;
+    
+    ///录音时长  当前设置为15
     NSInteger _recordTimeIndex;
 
 }
@@ -79,7 +81,6 @@
 
 }
 
-
 ///设置录音界面
 - (void)setUpRecordView{
     
@@ -88,6 +89,7 @@
     SD_RecordHelper *recordHelper = [SD_RecordHelper share];
     
     recordHelper.SDRecordTimeBlock = ^(NSInteger timeCount) {
+        [self setUpRecordViewStatus];
         _recordTimeIndex = timeCount;
         [weakSelf recordAnimationAction];
     };
@@ -95,12 +97,14 @@
     recordHelper.SDRecordDoneBlock = ^{
         self.dataArray = [[[RecordDataAccessor getRecord]reverseObjectEnumerator] allObjects];
         
+        [self zeroProcessAction];
+        
         [self.tableView reloadData];
     };
     
     _tapeImgIndex = recordHelper.recordTimeIndex;
     
-    [self setUpRecordViewStatus];
+    
 }
 
 ///设置录音按钮状态
@@ -108,16 +112,24 @@
      SD_RecordHelper *recordHelper = [SD_RecordHelper share];
     switch (recordHelper.recordStatus) {
         case SD_RHRecording:
+        {
+            [self.finshBtn setTitle:@"完成" forState:UIControlStateNormal];
+            [self.pauseBtn setTitle:@"暂停" forState:UIControlStateNormal];
+            self.pauseBtn.enabled = YES;
+        }
             break;
         case SD_RHPause:
         {
             [self.finshBtn setTitle:@"完成" forState:UIControlStateNormal];
             [self.pauseBtn setTitle:@"继续" forState:UIControlStateNormal];
+            self.pauseBtn.enabled = YES;
         }
             break;
         case SD_RHDone:
         {
             [self.finshBtn setTitle:@"开始" forState:UIControlStateNormal];
+            [self.pauseBtn setTitle:@"暂停" forState:UIControlStateNormal];
+            self.pauseBtn.enabled = NO;
         }
             break;
             
@@ -134,10 +146,14 @@
     if ([sender.titleLabel.text isEqualToString: @"完成"]) {
         [sender setTitle:@"开始" forState:UIControlStateNormal];
         
+        self.tapeStatusLab.text = @"正在录音中.";
+        
         [recordHelper finishRecord];
         
     }else{
         [sender setTitle:@"完成" forState:UIControlStateNormal];
+        
+        self.tapeStatusLab.text = @"准备录音";
         
         [recordHelper startRecord];
     }
@@ -149,10 +165,13 @@
     if ([sender.titleLabel.text isEqualToString: @"暂停"]) {
         //暂停操作
         [sender setTitle:@"继续" forState:UIControlStateNormal];
+        self.tapeStatusLab.text = @"录音暂停";
         
         [recordHelper pauseRecord];
     }else{
         [sender setTitle:@"暂停" forState:UIControlStateNormal];
+        
+        self.tapeStatusLab.text = @"正在录音中.";
          //暂停操作继续操作
         
         [recordHelper resumeRecord];
@@ -178,6 +197,16 @@
     [self recordProcessAction];
 }
 
+/// 0 初始化录音进度条
+- (void)zeroProcessAction{    
+    self.timerLab.text = @"00:00";
+    
+    self.progressWi.constant = 0;
+    
+    self.tapeStatusLab.text = @"准备录音";
+    
+}
+
 ///录音进度条显示动画
 - (void)recordProcessAction{
     self.timerLab.text = [NSString stringWithFormat:@"00:%@",_recordTimeIndex < 10 ? [NSString stringWithFormat:@"0%ld",_recordTimeIndex] : [NSString stringWithFormat:@"%ld",_recordTimeIndex]];
@@ -190,6 +219,15 @@
 - (void)tapeImvAnimationAction{
     
     self.tapeImv.image = [UIImage imageNamed:[NSString stringWithFormat:@"tape%ld",(long)_tapeImgIndex]];
+    
+    
+    NSString *recordStatusLabStr = @"正在录音中";
+    for (int i = 0; i < _tapeImgIndex; i ++) {
+        recordStatusLabStr = [NSString stringWithFormat:@"%@.",recordStatusLabStr];
+    }
+    
+    self.tapeStatusLab.text = recordStatusLabStr;
+    
 }
 
 - (void)setUpTableView{
