@@ -247,41 +247,21 @@ static SD_RecordHelper *_SD_RecordHelper = nil;
 }
 
 
-///获得录音机对象
--(AVAudioRecorder*)audioRecorder{
-    if (!_audioRecorder) {
-        //创建录音文件保存路径
-        NSURL *url=[self getSavePath];
-        //创建录音格式设置
-        NSDictionary *setting=[self getAudioSetting];
-        //创建录音机
-        NSError *error=nil;
-        _audioRecorder=[[AVAudioRecorder alloc]initWithURL:url settings:setting error:&error];
-        _audioRecorder.delegate=self;
-        _audioRecorder.meteringEnabled=YES;//如果要监控声波则必须设置为YES
-        if (error) {
-            NSLog(@"创建录音机对象时发生错误，错误信息：%@",error.localizedDescription);
-            return nil;
-        }
-    }
-    return _audioRecorder;
-}
-
-
 ///配置录音机
 -(void)configAudioRecorder{
     
-    //创建录音文件保存路径
+    //录音文件保存路径，我设置的路径是当前时间的字符串，注意路径不要有空格
     NSURL *url=[self getSavePath];
-    //创建录音格式设置
+    //录音格式设置
     NSDictionary *setting=[self getAudioSetting];
-    //创建录音机
+    //录音机
     NSError *error=nil;
     _audioRecorder=[[AVAudioRecorder alloc]initWithURL:url settings:setting error:&error];
     _audioRecorder.delegate=self;
-    _audioRecorder.meteringEnabled=YES;//如果要监控声波则必须设置为YES
+    //这个设置为YES可以做音波的效果，我没有实现音波功能
+    _audioRecorder.meteringEnabled=YES;
     if (error) {
-        NSLog(@"创建录音机对象时发生错误,错误信息：%@",error.localizedDescription);
+        NSLog(@"创建录音机audioRecorder发生错误:%@",error.localizedDescription);
     }
     
 }
