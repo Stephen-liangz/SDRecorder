@@ -147,11 +147,8 @@
 		D3322114200C583000193221 /* SDRecord */ = {
 			isa = PBXGroup;
 			children = (
-				D3322161200C939300193221 /* AXCCRecordVC.h */,
-				D3322160200C939300193221 /* AXCCRecordVC.m */,
-				D3322157200C91F300193221 /* AXCCRecordCellCell.h */,
-				D3322158200C91F300193221 /* AXCCRecordCellCell.m */,
-				D3322156200C91F300193221 /* AXCCRecordCellCell.xib */,
+				D35474C120108AF100176FE0 /* Util */,
+				D35474C020108AE400176FE0 /* VC */,
 				D332214B200C5BB900193221 /* Model */,
 				D3322147200C5B4100193221 /* SD_Recorder */,
 				D3322115200C583000193221 /* AppDelegate.h */,
@@ -163,10 +160,6 @@
 				D3322120200C583100193221 /* LaunchScreen.storyboard */,
 				D3322123200C583100193221 /* Info.plist */,
 				D3322124200C583100193221 /* main.m */,
-				D3322163200C955400193221 /* BaseViewController.h */,
-				D3322164200C955400193221 /* BaseViewController.m */,
-				D3322166200C956400193221 /* Util.h */,
-				D3322167200C956400193221 /* Util.m */,
 			);
 			path = SDRecord;
 			sourceTree = "<group>";
@@ -209,6 +202,29 @@
 				D332214D200C5BBF00193221 /* Record.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D35474C020108AE400176FE0 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D3322163200C955400193221 /* BaseViewController.h */,
+				D3322164200C955400193221 /* BaseViewController.m */,
+				D3322161200C939300193221 /* AXCCRecordVC.h */,
+				D3322160200C939300193221 /* AXCCRecordVC.m */,
+				D3322157200C91F300193221 /* AXCCRecordCellCell.h */,
+				D3322158200C91F300193221 /* AXCCRecordCellCell.m */,
+				D3322156200C91F300193221 /* AXCCRecordCellCell.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		D35474C120108AF100176FE0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D3322166200C956400193221 /* Util.h */,
+				D3322167200C956400193221 /* Util.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		DD68C370887D2ED10A28C341 /* Frameworks */ = {
